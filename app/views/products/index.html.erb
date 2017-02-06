@@ -1,0 +1,6 @@
+<h1>Products#index</h1>
+<% @products.each do |prod| %>
+<p><%= prod.name %></p>
+<p><%= prod.price %></p>
+<p>Added by: <%= prod.user.name %></p>
+<% end %>

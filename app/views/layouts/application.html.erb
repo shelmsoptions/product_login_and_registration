@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ProductsLoginAndReg</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if session[:user_id] %>
+    <p>
+      Current User: <%= User.find(session[:user_id]).name %> |
+      <a href="/sessions/<%= session[:user_id] %>" data-method="delete">Logout</a>
+    </p>
+    _______________________________
+    <% end %>
+    <%= yield %>
+  </body>
+</html>
